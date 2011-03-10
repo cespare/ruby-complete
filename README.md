@@ -37,7 +37,8 @@ able to type
 
     $ completion.rb <TAB>
 
-and see three choices auto-completed for you: `init`, `register`, and `unregister`.
+and see three choices auto-completed for you: `init`, `register`, and `unregister`. Further tabbing will give
+completion on sub-commands.
 
 Usage
 -----
