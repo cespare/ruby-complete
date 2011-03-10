@@ -94,7 +94,7 @@ EOM
       write_registration_file(header, commands)
       if hint
         puts "Registered command #{command}."
-        puts "Note that this will only affect new bash windows, unless you execute the following:"
+        puts "Note that this will only affect new bash instances, unless you execute the following:"
         puts "  $ source #{CompletionTool.registration_file}"
       end
     else
@@ -109,7 +109,7 @@ EOM
       write_registration_file(header, commands)
       if hint
         puts "Unregistered command #{command}."
-        puts "Note that this will only affect new bash windows, unless you execute the following:"
+        puts "Note that this will only affect new bash instances, unless you execute the following:"
         puts "  $ complete -r #{command}"
       end
     else

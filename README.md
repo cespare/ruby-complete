@@ -53,6 +53,9 @@ Registering and unregistering a command with completion.rb is simple:
     $ completion.rb register foo
     $ completion.rb unregister foo
 
+These commands will warn you that they will only take effect in new shells; this is because you can't really
+access bash builtins such as `complete` in such a way as to affect a parent shell.
+
 TODO:
 -----
 
