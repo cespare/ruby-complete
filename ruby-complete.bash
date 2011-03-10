@@ -1,5 +1,3 @@
-echo "ruby-complete.bash"
-
 _ruby_complete()
 {
     local current index
