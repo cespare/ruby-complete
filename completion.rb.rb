@@ -1,5 +1,5 @@
 # This is an example completion file. It works for autocompleting the script `completion.rb` itself. This
-# script uses a very simple syntax; it takes one of the following two forms
+# script uses a very simple syntax; it takes one of the following three forms:
 #     $ completion.rb init
 #     $ completion.rb register <command>
 #     $ completion.rb unregister <command>
