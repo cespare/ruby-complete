@@ -44,7 +44,7 @@ Usage
 
 The basic idea is that in order to have auto-completion for the command `foo`, you have to create `foo.rb` in
 the directory specified by `$RUBY_COMPLETE_DIR`. After you register the command `foo` with `completion.rb`,
-you'll your completion script will be called whenever you tab-complete after typing `foo`. The completion for
+your completion script will be called whenever you tab-complete after typing `foo`. The completion for
 `completion.rb` is hence `$RUBY_COMPLETE_DIR/completion.rb.rb`. The best way to understand how to write ruby
 completion scripts is to look at this example.
 

@@ -33,7 +33,7 @@ fi
 ./completion.rb register completion.rb
 
 echo "Installation successful. Now make sure you source ruby-complete.bash (in this directory) in your .bashrc."
-echo "Example:"
+echo 'Example (assuming you just installed into $HOME/scripts/):'
 echo
 echo '    source $HOME/scripts/ruby-complete.bash'
 echo
