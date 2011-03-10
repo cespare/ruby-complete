@@ -1,5 +1,3 @@
-require "completion"
-
 # This is an example completion file. It works for autocompleting the script `completion.rb` itself. This
 # script uses a very simple syntax; it takes one of the following two forms
 #     $ completion.rb init
@@ -7,7 +5,7 @@ require "completion"
 #     $ completion.rb unregister <command>
 # To auto-complete <command> for `register`, we'll suggest commands that are already in the user's path. To
 # auto-complete <command> for `unregister`, we'll parse the registration file and suggest commands that are
-# already there. We'll also demonstrate caching of the commands in this case.
+# already there.
 
 completion = Completion.new
 
