@@ -80,8 +80,7 @@ EOM
     registration_file = File.open(CompletionTool.registration_file, "w")
     header.each { |comment| registration_file.write(comment) }
     registration_file.write("\n")
-    commands.each { |command| registration_file.write("complete -F _ruby_complete #{command}") }
-    registration_file.write("\n")
+    commands.each { |command| registration_file.write("complete -F _ruby_complete #{command}\n") }
     registration_file.close
   end
 
