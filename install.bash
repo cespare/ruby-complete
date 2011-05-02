@@ -1,33 +1,22 @@
-#!/bin/bash
+#!/bin/sh
+
+set -e
 
 if [ -z "$RUBY_COMPLETE_DIR" ]; then
-  RUBY_COMPLETE_DIR="$HOME/ruby-completion-scripts"
-fi
-
-if [ -e "ruby-complete.bash" -o -e "completion.rb" ]; then
-  echo "Error: ruby-complete.bash and completion.rb should not already exist in this directory."
+  echo 'Error: $RUBY_COMPLETE_DIR must be defined (put it in your bashrc).'
+  echo 'Example:'
+  echo '  export $RUBY_COMPLETE_DIR=$HOME/ruby-complete'
   exit 1
 fi
 
-wget --no-check-certificate https://github.com/cespare/ruby-complete/raw/master/ruby-complete.bash
-if [ $? -ne 0 ]; then
-  echo "Error downloading ruby-complete.bash."
-  exit 1
-fi
-
-wget --no-check-certificate https://github.com/cespare/ruby-complete/raw/master/completion.rb
-if [ $? -ne 0 ]; then
-  echo "Error downloading completion.rb."
+if [ ! -e "$RUBY_COMPLETE_DIR" ]; then
+  echo "Error: $RUBY_COMPLETE_DIR does not exist."
   exit 1
 fi
 
 chmod +x completion.rb
 
-wget -O $RUBY_COMPLETE_DIR/completion.rb.rb --no-check-certificate https://github.com/cespare/ruby-complete/raw/master/completion.rb.rb
-if [ $? -ne 0 ]; then
-  echo "Error downloading completion.rb.rb."
-  exit 1
-fi
+cp completion.rb.rb $RUBY_COMPLETE_DIR/
 
 ./completion.rb init
 ./completion.rb register completion.rb

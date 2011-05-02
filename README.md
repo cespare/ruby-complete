@@ -8,28 +8,23 @@ completion script but want to avoid writing actual bash code.
 Installation
 ------------
 
-First, you'll need to pick two different directories -- one for a couple of executables you'll download, and
-one for any ruby completion scripts you write. You have to pick the first yourself; I like `$HOME/scripts/`
-for this purpose (it should be in your path). The second will default to `$HOME/ruby-completion-scripts/`. In
-our example, we'll suppose we want something different: `$HOME/scripts/completion`.
-
-First, edit your `.bashrc` to specify `$RUBY_COMPLETE_DIR`, the home for your ruby-complete scripts:
+First, you need to pick a directory for your ruby completion scripts. I like `$HOME/scripts/completion`. Edit
+your `.bashrc` to specify `$RUBY_COMPLETE_DIR`:
 
     export RUBY_COMPLETE_DIR="$HOME/scripts/completion"
 
-(Make sure to `source ~/.bashrc` afterwards). Now change to the chosen scripts directory and run my handy
-installer script:
+(Make sure to `source ~/.bashrc` afterwards). Now change to the directory where you downloaded the
+ruby-complete source and run the installer:
 
-    $ cd $HOME/scripts
-    $ curl https://github.com/cespare/ruby-complete/raw/master/install.bash | bash
+    $ ./install.bash
 
-This should install the executable scripts into `$HOME/scripts/` and put an example completion script in
-`$HOME/scripts/completion/`. Finally, you'll want to get the completion in every shell you open; put this in
-`.bashrc`:
+This will put an example completion script in `$RUBY_COMPLETE_DIR`. You should also make sure that
+`completion.rb`, which is the main ruby-complete script, is in your `$PATH`. Finally, you'll want to get the
+completion in every shell you open; put this in `.bashrc`:
 
-    source $HOME/scripts/ruby-complete.bash
+    source path/to/ruby-complete.bash
 
-(Remember to change the appropriate paths if you want to install to a location other than `$HOME/scripts/`.)
+(Change this path as appropriate to point to where you downloaded ruby-complete.)
 
 The installer script will automatically register one ruby-complete script for you: the auto-complete for
 `completion.rb` itself. If you source `ruby-complete.bash` manually (or open a fresh terminal), you should be

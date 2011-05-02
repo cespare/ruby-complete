@@ -8,6 +8,7 @@ _ruby_complete()
 }
 
 if [ -z "$RUBY_COMPLETE_DIR" ]; then
-  export RUBY_COMPLETE_DIR="$HOME/ruby-completion-scripts"
+  echo 'Error: $RUBY_COMPLETE_DIR not defined.'
+  exit 1
 fi
 source $RUBY_COMPLETE_DIR/registration.bash
